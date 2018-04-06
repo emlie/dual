@@ -33,12 +33,13 @@
 
   /* transitions */
   --smooth: ease-in-out 0.25s;
+  --smooth-delay:  0.5s ease-in-out 0.15s;
   --smooth-border: border 0.5s ease-in-out;
 
   /* box-shadows */
   --smooth-light-shadow: 0 2px 4px var(--almost-white), 0 2px 4px rgba(0,0,0,0.1);
   --smooth-lighter-shadow: 0 0 4px var(--almost-white), 0 4px 4px rgba(0,0,0,0.07);
-  --smooth-dark-shadow: 0 1.5rem 2rem rgba(0,0,0,0.3), 0 0 2rem rgba(0,0,0,0.1);
+  --smooth-dark-shadow: 0 1.5rem 2rem rgba(0,0,0,0.1), 0 0 2rem rgba(0,0,0,0.1);
   --smooth-big-dark-shadow: 0 4px 100px var(--almost-white), 0 4px 100px rgba(0,0,0,0.5);
 }
 
@@ -62,19 +63,18 @@ body {
 h1 {
   margin-top: 0;
   font-family: var(--heading-font-serif-2);
-  font-size: 6vw;
+  font-size: 3vw;
   font-weight: var(--light);
   text-align: center;
   text-transform: capitalize;
   text-decoration: none;
   letter-spacing: 0.25rem;
   color: var(--almost-black);
-  /* gradient text effect:
   background-color: #FAACA8;
   background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  */
+
 }
 
 
@@ -144,6 +144,7 @@ main {
 #nav-bottom ul li {
   flex: 1 1 auto; /* grow shrink basis */
   padding: 1.5rem 0 1.5rem 0;
+  transition: var(--smooth-delay);
   background: transparent;
 }
 
@@ -161,6 +162,11 @@ main {
 #nav-bottom ul li:nth-child(4) {
   flex: 12 1 auto;
   background: transparent;
+}
+
+#nav-top ul li:hover,
+#nav-bottom ul li:hover {
+  transform: translateY(-0.2rem);
 }
 
 #nav-top ul li a,
@@ -186,10 +192,60 @@ main {
   z-index: 1;
 }
 
-.h1 {
-  grid-area: 3 / 1 / auto / span 10;
-  background: transparent;
-  transform: translateX(-1rem);
+.center {
+  grid-area: 7 / 7 / span 8 / span 8;
+  background: var(--almost-white);
   z-index: 3;
+}
+
+.top-blob {
+  grid-area: 5 / 14 / span 3 / span 3;
+  background: no-repeat center/100% url("images/Abstract Sky for iPhone X.PNG.jpg");
+  z-index: 4;
+  width: 20rem;
+  height: 20rem;
+  margin-right: 4rem;
+  border-radius: 100%;
+  transition: var(--smooth-delay);
   display: none;
+}
+
+.bottom-blob {
+  grid-area: 11 / 5 / span 3 / span 3;
+  background: no-repeat center/100% url("images/Abstract Sky for iPhone X.PNG.jpg");
+  z-index: 4;
+  width: 30rem;
+  height: 30rem;
+  margin-left: 4rem;
+  border-radius: 100%;
+  transition: var(--smooth-delay);
+  display: none;
+}
+
+.top-blob:hover,
+.bottom-blob:hover {
+  box-shadow: var(--smooth-dark-shadow);
+  transform: translateY(-1rem) rotate(10deg) scale(1.15);
+}
+
+.h1 {
+  grid-area: 10 / 5 / span 2 / span 12;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background: transparent;
+  transform: translateX(0rem);
+  z-index: 3;
+  border: 0.05rem solid var(--almost-white);
+}
+
+.gradient-border {
+  grid-area: 10 / 7 / span 2 / span 8;
+  z-index: 3;
+  border-top: 0.1rem solid #FAACA8;
+  border-bottom: 0.1rem solid #DDD6F3;
+  border-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+  border-image-slice: 1;
 }
