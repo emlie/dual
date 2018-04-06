@@ -74,7 +74,8 @@ h1 {
   background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
+  /* text-shadow: 0.2rem 0.1rem 0 rgba(0, 0, 0, 0.04); */ /* https://envato.com/blog/css3-typography-code-snippets/ */
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 
@@ -87,6 +88,7 @@ main {
   background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
   z-index: 2;
   transform: scale(1.05, 1.025);
+  /* box-shadow: var(--smooth-dark-shadow); */
 }
 
 
@@ -137,6 +139,7 @@ main {
   text-decoration: none;
   letter-spacing: 0.5rem;
   color: var(--almost-white);
+  -webkit-font-smoothing: subpixel-antialiased;
   list-style-type: none;
   transition: var(--smooth);
 }
@@ -167,7 +170,7 @@ main {
 
 #nav-top ul li:hover,
 #nav-bottom ul li:hover {
-  transform: translateY(-0.2rem);
+  transform: translateY(-0.4rem);
 }
 
 #nav-top ul li a,
@@ -197,6 +200,7 @@ main {
   grid-area: 7 / 7 / span 8 / span 8;
   background: var(--almost-white);
   z-index: 3;
+  /* box-shadow: var(--smooth-light-shadow); */
 }
 
 .top-blob {
