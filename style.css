@@ -51,7 +51,145 @@
 }
 
 body {
+  display: grid;
+  grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+  grid-gap: 0;
   width: 100vw;
   height: 100vh;
   background: var(--almost-white);
+}
+
+h1 {
+  margin-top: 0;
+  font-family: var(--heading-font-serif-2);
+  font-size: 6vw;
+  font-weight: var(--light);
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  letter-spacing: 0.25rem;
+  color: var(--almost-black);
+  /* gradient text effect:
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  */
+}
+
+
+
+
+
+main {
+  grid-area: 2 / 2 / span 18 / span 18; /* row-start, col-start, row-end, col-end */
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+  z-index: 2;
+}
+
+
+
+
+
+#nav-top {
+  grid-area: 2 / 2 / span 1 / span 18;
+  background: transparent;
+  z-index: 3;
+  /* border-bottom: 0.05rem solid var(--almost-white); */
+}
+
+#nav-bottom {
+  grid-area: 19 / 2 / span 1 / span 18;
+  background: transparent;
+  z-index: 3;
+  /* border-top: 0.05rem solid var(--almost-white); */
+}
+
+#nav-left {
+  grid-area: 6 / 2 / span 10 / span 1;
+  background: transparent;
+  z-index: 3;
+  border-right: 0.05rem solid var(--almost-white);
+}
+
+#nav-right {
+  grid-area: 6 / 19 / span 10 / span 1;
+  background: transparent;
+  z-index: 3;
+  border-left: 0.05rem solid var(--almost-white);
+}
+
+#nav-top ul,
+#nav-bottom ul {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background: inherit;
+  font-family: var(--main-font-family);
+  font-size: 1.2vw;
+  font-weight: var(--medium);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5rem;
+  color: var(--almost-white);
+  list-style-type: none;
+  transition: var(--smooth);
+}
+
+#nav-top ul li,
+#nav-bottom ul li {
+  flex: 1 1 auto; /* grow shrink basis */
+  padding: 1.5rem 0 1.5rem 0;
+  background: transparent;
+}
+
+#nav-top ul li:first-child,
+#nav-bottom ul li:first-child {
+  flex: 1 0 auto;
+  background: transparent;
+}
+
+#nav-top ul li:nth-child(2) {
+  flex: 12 1 auto;
+  background: transparent;
+}
+
+#nav-bottom ul li:nth-child(4) {
+  flex: 12 1 auto;
+  background: transparent;
+}
+
+#nav-top ul li a,
+#nav-bottom ul li a {
+  font-size: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  transition: var(--smooth);
+}
+
+#nav-top li a:hover,
+#nav-bottom li a:hover {
+  color: var(--azureish-white);
+}
+
+
+
+
+
+.behind {
+  grid-area: 1 / 1 / span 20 / span 20;
+  background: var(--almost-white);
+  z-index: 1;
+}
+
+.h1 {
+  grid-area: 3 / 1 / auto / span 10;
+  background: transparent;
+  transform: translateX(-1rem);
+  z-index: 3;
+  display: none;
 }
