@@ -86,6 +86,7 @@ main {
   background-color: #FAACA8;
   background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
   z-index: 2;
+  transform: scale(1.05, 1.025);
 }
 
 
