@@ -53,6 +53,8 @@
 
 body {
   display: grid;
+
+  /* rows | columns */
   grid-template: repeat(20, 1fr) / repeat(20, 1fr);
   grid-gap: 0;
   width: 100vw;
